@@ -1,3 +1,5 @@
+// state
+
 const state = {
   currentFilter: "all",
   todos: [],
@@ -16,6 +18,7 @@ function getDataFromLocalStorage() {
   const todoData = JSON.parse(localStorage.getItem("todos"));
   if (todoData) {
     state.todos = todoData;
+
     render();
   }
 }
@@ -37,11 +40,12 @@ function addNewTodo() {
     state.todos.some((todo) => todo.description === newTodoDescription)
   ) {
     alert("Todo bereits vorhanden");
+
     return;
   }
+
   const newTodoData = {
-    id: new Date().getTime(),
-    description: newTodoDescriptionElement.value,
+    description: newTodoDescription,
     done: false,
   };
 
@@ -65,12 +69,15 @@ function generateListItem(todoData) {
   checkbox.checked = todoData.done;
   checkbox.addEventListener("change", () => {
     todoData.done = !todoData.done;
+
     updateLocalStorageData();
+
     render();
   });
 
   const label = document.createElement("label");
   label.innerText = todoData.description;
+
   if (todoData.done) {
     label.style.textDecoration = "line-through";
   }
@@ -101,9 +108,11 @@ function render() {
 //Filter
 
 const filterButtons = document.querySelectorAll('input[name="filter"]');
+
 filterButtons.forEach((button) => {
   button.addEventListener("change", () => {
     state.currentFilter = button.value;
+
     render();
   });
 });
