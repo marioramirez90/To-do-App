@@ -106,3 +106,20 @@ header {
   padding: 1rem;
   border-radius: 0 1rem 0 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .todo {
+    position: absolute;
+    height: 100%;
+    border-radius: 0;
+    margin: -13px;
+  }
+  .container {
+    margin-top: -1rem;
+    padding: 1.4rem;
+  }
+}
