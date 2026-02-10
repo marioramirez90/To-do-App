@@ -112,14 +112,25 @@ header {
     margin: 0;
     padding: 0;
   }
+  header{
+    border-radius: 0px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+  }
   .todo {
     position: absolute;
     height: 100%;
-    border-radius: 0;
-    margin: -13px;
+    border-radius: none;
+    
   }
   .container {
     margin-top: -1rem;
     padding: 1.4rem;
+  }
+  .todo-list{
+    height: 400px;
+    overflow: scroll;
+
   }
 }
